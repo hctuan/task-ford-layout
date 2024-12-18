@@ -55,10 +55,10 @@ export function NavigationMenuDemo() {
 						>
 							<NavigationMenuItem
 								key={e.value}
-								className="bg-transparent h-[56px] box-border pt-2"
+								className="relative bg-transparent h-[56px] box-border pt-2"
 								onClick={() => setActive(e.value)}
 							>
-								<NavigationMenuTrigger className="!bg-transparent h-full hover:text-[#203461] ">
+								<NavigationMenuTrigger className=" !bg-transparent h-full hover:text-[#203461] ">
 									{e.label}
 									{e.subs && (
 										<ChevronDown
@@ -69,8 +69,8 @@ export function NavigationMenuDemo() {
 								</NavigationMenuTrigger>
 								{e.subs && (
 									<NavigationMenuContent>
-										<ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-											<li className="row-span-3">
+										<ul className="flex flex-col gap-1">
+											{/* <li className="row-span-3">
 												<NavigationMenuLink asChild>
 													<img
 														className=" w-full h-full object-cover "
@@ -78,11 +78,9 @@ export function NavigationMenuDemo() {
 														alt="thumb"
 													/>
 												</NavigationMenuLink>
-											</li>
+											</li> */}
 											{e.subs.map((s) => (
-												<ListItem key={s.value} href="/docs" title={s.label}>
-													This is a description.
-												</ListItem>
+												<div key={s.value}>{s.label}</div>
 											))}
 										</ul>
 									</NavigationMenuContent>

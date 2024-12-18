@@ -60,7 +60,8 @@ import {
 	ChartTooltip,
 	ChartTooltipContent,
 } from "@/components/ui/chart";
-import { NavigationMenuDemo } from "./Menu";
+import { Menu3 } from "./Menu3";
+// import { NavigationMenuDemo } from "./Menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 
 export const description = "An interactive bar chart";
@@ -75,9 +76,11 @@ function App() {
 					</div>
 
 					{/* <MenuList /> */}
-					<NavigationMenuDemo />
+					{/* <NavigationMenuDemo /> */}
+					{/* <Menu2 /> */}
+					<Menu3 />
 
-					<Button className="bg-[#0084FF]">
+					<Button className="bg-[#0084FF] ml-3">
 						<Plus /> Create
 					</Button>
 				</div>
@@ -123,7 +126,7 @@ function App() {
 // 			],
 // 		},
 // 		{
-// 			label: "Vacation Requests",
+// 			label: "Vacation",
 // 			value: 3,
 // 			subs: [
 // 				{ label: "My Vacation", value: 31 },
@@ -144,7 +147,10 @@ function App() {
 // 						className={`cursor-pointer text-[16px] border-b-[2px] text-[#203461] ${active === e.value ? "border-b-[#203461] font-bold" : " border-b-[#FFFFFF00]"} `}
 // 						key={e.value}
 // 					>
-// 						<DropdownMenu key={e.value}>
+// 						<Menu2 subs={e.subs} onClick={() => setActive(e.value)}>
+// 							<div>{e.label}</div>
+// 						</Menu2>
+// 						{/* <DropdownMenu key={e.value}>
 // 							<DropdownMenuTrigger
 // 								className="flex items-center gap-1 w-full h-full p-[12px] "
 // 								onClick={() => setActive(e.value)}
@@ -159,7 +165,7 @@ function App() {
 // 									))}
 // 								</DropdownMenuContent>
 // 							)}
-// 						</DropdownMenu>
+// 						</DropdownMenu> */}
 // 					</div>
 // 				);
 // 			})}

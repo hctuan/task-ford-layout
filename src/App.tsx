@@ -14,7 +14,6 @@ import {
 	SunIcon,
 } from "lucide-react";
 import * as React from "react";
-import { useState } from "react";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 import "./App.css";
 import Logo from "./assets/logo.png";
@@ -61,13 +60,8 @@ import {
 	ChartTooltip,
 	ChartTooltipContent,
 } from "@/components/ui/chart";
+import { NavigationMenuDemo } from "./Menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "./components/ui/dropdown-menu";
 
 export const description = "An interactive bar chart";
 
@@ -80,7 +74,8 @@ function App() {
 						<img className="h-[32px]" src={Logo} alt="logo" />
 					</div>
 
-					<MenuList />
+					{/* <MenuList /> */}
+					<NavigationMenuDemo />
 
 					<Button className="bg-[#0084FF]">
 						<Plus /> Create
@@ -114,63 +109,63 @@ function App() {
 	);
 }
 
-const MenuList = () => {
-	const [active, setActive] = useState(1);
-	const menuItems = [
-		{ label: "Work", value: 1 },
-		{
-			label: "Timesheets",
-			value: 2,
-			subs: [
-				{ label: "Timelog", value: 21 },
-				{ label: "Timesheet", value: 22 },
-				{ label: "Timesheet Approval", value: 23 },
-			],
-		},
-		{
-			label: "Vacation Requests",
-			value: 3,
-			subs: [
-				{ label: "My Vacation", value: 31 },
-				{ label: "Vacation Approval", value: 32 },
-			],
-		},
-		{ label: "Reports", value: 4 },
-		{ label: "Teams", value: 5 },
-		{ label: "ORKs", value: 6 },
-	];
+// const MenuList = () => {
+// 	const [active, setActive] = useState(1);
+// 	const menuItems = [
+// 		{ label: "Work", value: 1 },
+// 		{
+// 			label: "Timesheets",
+// 			value: 2,
+// 			subs: [
+// 				{ label: "Timelog", value: 21 },
+// 				{ label: "Timesheet", value: 22 },
+// 				{ label: "Timesheet Approval", value: 23 },
+// 			],
+// 		},
+// 		{
+// 			label: "Vacation Requests",
+// 			value: 3,
+// 			subs: [
+// 				{ label: "My Vacation", value: 31 },
+// 				{ label: "Vacation Approval", value: 32 },
+// 			],
+// 		},
+// 		{ label: "Reports", value: 4 },
+// 		{ label: "Teams", value: 5 },
+// 		{ label: "ORKs", value: 6 },
+// 	];
 
-	return (
-		<div className="flex gap-2 h-[56px] items-end ml-4">
-			{menuItems.map((e) => {
-				return (
-					// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-					<div
-						className={`cursor-pointer text-[16px] border-b-[2px] text-[#203461] ${active === e.value ? "border-b-[#203461] font-bold" : " border-b-[#FFFFFF00]"} `}
-						key={e.value}
-					>
-						<DropdownMenu key={e.value}>
-							<DropdownMenuTrigger
-								className="flex items-center gap-1 w-full h-full p-[12px] "
-								onClick={() => setActive(e.value)}
-							>
-								{e.label}
-								{e.subs && <ChevronDown size={12} />}
-							</DropdownMenuTrigger>
-							{e.subs && (
-								<DropdownMenuContent className="p-2">
-									{e.subs.map((e) => (
-										<DropdownMenuItem key={e.value}>{e.label}</DropdownMenuItem>
-									))}
-								</DropdownMenuContent>
-							)}
-						</DropdownMenu>
-					</div>
-				);
-			})}
-		</div>
-	);
-};
+// 	return (
+// 		<div className="flex gap-2 h-[56px] items-end ml-4">
+// 			{menuItems.map((e) => {
+// 				return (
+// 					// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+// 					<div
+// 						className={`cursor-pointer text-[16px] border-b-[2px] text-[#203461] ${active === e.value ? "border-b-[#203461] font-bold" : " border-b-[#FFFFFF00]"} `}
+// 						key={e.value}
+// 					>
+// 						<DropdownMenu key={e.value}>
+// 							<DropdownMenuTrigger
+// 								className="flex items-center gap-1 w-full h-full p-[12px] "
+// 								onClick={() => setActive(e.value)}
+// 							>
+// 								{e.label}
+// 								{e.subs && <ChevronDown size={12} />}
+// 							</DropdownMenuTrigger>
+// 							{e.subs && (
+// 								<DropdownMenuContent className="p-2">
+// 									{e.subs.map((e) => (
+// 										<DropdownMenuItem key={e.value}>{e.label}</DropdownMenuItem>
+// 									))}
+// 								</DropdownMenuContent>
+// 							)}
+// 						</DropdownMenu>
+// 					</div>
+// 				);
+// 			})}
+// 		</div>
+// 	);
+// };
 
 export function AppSidebar() {
 	const items = [

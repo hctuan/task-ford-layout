@@ -63,20 +63,9 @@ import {
 } from "@/components/ui/chart";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 import {
-	NavigationMenu,
-	NavigationMenuContent,
-	NavigationMenuItem,
-	NavigationMenuLink,
-	NavigationMenuList,
-	NavigationMenuTrigger,
-} from "./components/ui/navigation-menu";
-import { NavigationMenuDemo } from "./TopMenu";
-import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "./components/ui/dropdown-menu";
 
